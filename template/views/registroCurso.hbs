@@ -1,0 +1,61 @@
+{{>header}}
+
+<br>
+<h2>
+    Bienvenido a la página de registro de cursos
+</h2>
+<br>
+
+<form action="/guardar" method="post">
+     {{response}}<br>
+    <div class="form-group row">
+        <label for="NombreCompleto" class="col-sm-2 col-form-label">Nombre completo:</label>
+        <div class="col-sm-6">
+            <input type="text" name="nombre" class="form-control" id="NombreCompleto" required>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="IdCurso" class="col-sm-2 col-form-label">Id del curso:</label>
+        <div class="col-sm-6">
+            <input type="number" name="idCurso" class="form-control" id="IdCurso" required>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="DescripcionCurso" class="col-sm-2 col-form-label">Descripcion curso:</label>
+        <div class="col-sm-6">
+            <input type="text" name="descripcion" class="form-control" id="DescripcionCurso" required>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Valor" class="col-sm-2 col-form-label">Valor:</label>
+        <div class="col-sm-6">
+            <input type="number" name="valor" class="form-control" id="Valor" required>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Modalidad" class="col-sm-2 col-form-label">Modalidad:</label>
+        <div class="col-sm-6">
+            <select name="modalidad" class="form-control" id="Modalidad">
+                <option value="-">-</option>
+                <option value="Virtual">Virtual</option>
+                <option value="Presencial">Presencial</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="IntensidadHoraria" class="col-sm-2 col-form-label">Intensidad horaria:</label>
+        <div class="col-sm-6">
+            <input type="number" name="intensidad" class="form-control" id="IntensidadHoraria">
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Guardar</button>    
+   
+</form>
+
+{{>footer}}

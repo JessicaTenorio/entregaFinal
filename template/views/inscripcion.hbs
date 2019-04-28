@@ -1,0 +1,52 @@
+{{>header}}
+
+<br>
+<h2>
+  Bienvenido a la página de inscripción
+</h2>
+<br>
+
+<form action="/inscribir" method="post">
+
+  <div class="form-group row">
+    <label for="DocumentoIdentidad" class="col-sm-2 col-form-label">Documento identidad:</label>
+    <div class="col-sm-6">
+      <input type="number" class="form-control" id="DocumentoIdentidad" name="identidad" value={{identidad}} readonly>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="NombreCompleto" class="col-sm-2 col-form-label">Nombre completo:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="NombreCompleto" name="nombre" value={{nombre}} readonly>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="Correo" class="col-sm-2 col-form-label">Correo:</label>
+    <div class="col-sm-6">
+      <input type="email" class="form-control" id="Correo" name="correo" value={{correo}} readonly>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="Telefono" class="col-sm-2 col-form-label">Telefono:</label>
+    <div class="col-sm-6">
+      <input type="number" class="form-control" id="Telefono" name="telefono" value={{telefono}} readonly>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="Curso" class="col-sm-2 col-form-label">Curso disponible:</label>
+    <div class="col-sm-6">
+      {{{selectDisponibles listado}}}
+    </div>
+  </div>
+
+  {{#if listado}}
+     <button class="btn btn-primary">Matricular</button><br><br>
+  {{/if}}
+  {{response}}<br><br>
+</form>
+
+{{>footer}}

@@ -1,0 +1,52 @@
+{{>header}}
+
+<br>
+<h2>
+  Bienvenido a la página de registro de nota final
+</h2>
+<br>
+
+<form action="/guardarNota" method="post">
+
+  <div class="form-group row">
+    <label for="DocumentoIdentidad" class="col-sm-2 col-form-label">Documento identidad:</label>
+    <div class="col-sm-6">
+      <input type="number" class="form-control" id="DocumentoIdentidad" name="identidad" required>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="Curso" class="col-sm-2 col-form-label">Curso:</label>
+    <div class="col-sm-6">
+      {{{selectCursos listado}}}
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="Nota" class="col-sm-2 col-form-label">Nota modulo 1:</label>
+    <div class="col-sm-6">
+      <input type="float" class="form-control" id="Nota" name="nota1" required>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="Nota" class="col-sm-2 col-form-label">Nota modulo 2:</label>
+    <div class="col-sm-6">
+      <input type="float" class="form-control" id="Nota" name="nota2" required>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="Nota" class="col-sm-2 col-form-label">Nota modulo 3:</label>
+    <div class="col-sm-6">
+      <input type="float" class="form-control" id="Nota" name="nota3" required>
+    </div>
+  </div>
+
+  {{#if listado}}
+     <button class="btn btn-primary">Registrar</button><br><br>
+  {{/if}}
+  {{response}}<br><br>
+</form>
+
+{{>footer}}

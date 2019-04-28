@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    
+   
+    <title>INSTITUTO TECNOLOGICO</title>
+    
+</head>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"> </script>
+    <div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>INSTITUTO TECNOLÓGICO</h1>              
+            </div>
+            <div class="col-sm-12 text-center">
+                <img src="img/banner.jpg" width="250px">
+            </div>
+        
+    </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link" href="/verCurso">Cursos disponibles</a>
+      </li>
+      {{#if rolA}}
+        <li class="nav-item">
+        <a class="nav-link" href="/inscribir">Inscripcion</a>
+        </li> 
+        <li class="nav-item">
+        <a class="nav-link" href="/verNotas">Nota final</a>
+        </li> 
+        <li class="nav-item">
+        <a class="nav-link" href="/chatear">Chat</a>
+        </li>  
+             
+      {{/if}}
+
+    {{#if rolC}}
+      <li class="nav-item">
+        <a class="nav-link" href="/registroCurso">Crear Curso</a>
+      </li>   
+      <li class="nav-item">
+        <a class="nav-link" href="/registroNota">Registro Nota Final</a>
+      </li>         
+      <li class="nav-item">
+        <a class="nav-link" href="/verInscritos">Inscritos</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/eliminaInscrito">Eliminar inscritos</a>
+      </li>
+    
+    {{/if}}
+
+    {{#if session}}
+     </ul>    
+     <form class="form-inline my-2 my-lg-0" action="/salir" method="get">
+       <img src="data:img/png;base64,{{avatar}}" class="img-fluid" width="50px">
+      <p>Bienvenid@ {{nombre}}</p>      
+      <button class="btn btn-primary my-2 my-sm-0" type="submit">Salir</button>
+     </form>
+    {{else}}
+      <li class="nav-item">
+        <a class="nav-link" href="/registroUsuario">Registrate</a>
+      </li>
+    </ul>     
+      <form class="form-inline my-2 my-lg-0" action="/ingresar" method="post">
+        <input class="form-control mr-sm-2" type="text" name="usuario" placeholder="Documento identidad">
+        <input class="form-control mr-sm-2" type="password" name="password" placeholder="Contraseña">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Ingresar</button>
+      </form>
+     {{/if}}
+  </div>
+</nav>
